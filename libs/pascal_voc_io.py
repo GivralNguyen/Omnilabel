@@ -3,7 +3,8 @@
 import sys
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
-
+import numpy as np
+import math
 try:
   from lxml import etree
   print("running with lxml.etree")
@@ -109,6 +110,11 @@ class PascalVocWriter:
     # You Hao 2017/06/21
     # add to analysis robndbox
     def addRotatedBndBox(self, cx, cy, w, h, angle, name, difficult):
+        center_img = [((self.imgSize[1])/2),((self.imgSize[0])/2)] 
+        angle = angle * 180/math.pi
+        if angle > 90:
+            angle = - (180- angle) 
+            
         robndbox = {'cx': cx, 'cy': cy, 'w': w, 'h': h, 'angle': angle}
         robndbox['name'] = name
         robndbox['difficult'] = difficult

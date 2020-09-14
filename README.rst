@@ -7,6 +7,7 @@ roLabelImg
 .. image:: https://img.shields.io/travis/tzutalin/labelImg.svg
         :target: https://travis-ci.org/tzutalin/labelImg
 
+This has been further modified from roLabelImg to display angle in range of -90 to 90 degree in accordance to labeling from CEPDOF (http://vip.bu.edu/projects/vsns/cossy/datasets/cepdof/)
 roLabelImg is a graphical image annotation tool can label ROTATED rectangle regions, which is rewrite from 'labelImg'.
 
 The original version 'labelImg''s link is here<https://github.com/tzutalin/labelImg>.
