@@ -69,6 +69,12 @@ class Shape(object):
             self.points[i] = self.rotatePoint(p, theta)
         self.direction -= theta
         self.direction = self.direction % (2 * math.pi)
+        angle = self.direction * 180/math.pi
+        if 90 < angle <=270:
+            angle = - (180- angle) 
+        if 270 <angle < 360:
+            angle =  -(360 - angle)
+        print(angle)
 
     def rotatePoint(self, p, theta):
         order = p-self.center;
@@ -167,6 +173,19 @@ class Shape(object):
         d = self.point_size / self.scale
         shape = self.point_type
         point = self.points[i]
+        for i, p in enumerate(self.points):
+            if i == 0:
+                x0 = self.points[0].x()
+                y0 = self.points[0].y()
+            if i == 1:
+                x1 = self.points[1].x()
+                y1 = self.points[1].y()
+            if i == 3:
+                x3 = self.points[3].x()
+                y3 = self.points[3].y()
+            if i == 2:
+                x2 = self.points[2].x()
+                y2 = self.points[2].y()
         if i == self._highlightIndex:
             size, shape = self._highlightSettings[self._highlightMode]
             d *= size
@@ -176,6 +195,12 @@ class Shape(object):
             self.vertex_fill_color = Shape.vertex_fill_color
         if shape == self.P_SQUARE:
             path.addRect(point.x() - d / 2, point.y() - d / 2, d, d)
+            serifFont = QFont("Times", 20, QFont.Bold)
+            serifFont = QFont("Times", 20, QFont.Bold)
+            path.addText(((x2+x3)/2),((y2+y3)/2),serifFont, "width")
+            path.addText(((x1+x2)/2),((y1+y2)/2),serifFont, "height")
+            
+
         elif shape == self.P_ROUND:
             path.addEllipse(point, d / 2.0, d / 2.0)
         else:
