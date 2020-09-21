@@ -74,7 +74,7 @@ class Shape(object):
             angle = - (180- angle) 
         if 270 <angle < 360:
             angle =  -(360 - angle)
-        print(angle)
+        #print(angle)
 
     def rotatePoint(self, p, theta):
         order = p-self.center;
