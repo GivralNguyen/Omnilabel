@@ -195,10 +195,14 @@ class Shape(object):
             self.vertex_fill_color = Shape.vertex_fill_color
         if shape == self.P_SQUARE:
             path.addRect(point.x() - d / 2, point.y() - d / 2, d, d)
-            serifFont = QFont("Times", 20, QFont.Bold)
-            serifFont = QFont("Times", 20, QFont.Bold)
-            path.addText(((x2+x3)/2),((y2+y3)/2),serifFont, "width")
-            path.addText(((x1+x2)/2),((y1+y2)/2),serifFont, "height")
+            serifFont = QFont("Times", 15, QFont.Bold)
+            serifFont = QFont("Times", 15, QFont.Bold)
+            width_value = math.sqrt(pow((x3-x2),2)+pow((y3-y2),2))
+            height_value = math.sqrt(pow((x1-x2),2)+pow((y1-y2),2))
+            str_width = 'width = ' + str(width_value)
+            str_height = 'height = ' + str(height_value)
+            path.addText(((x2+x3)/2),((y2+y3)/2),serifFont, str_width)
+            path.addText(((x1+x2)/2),((y1+y2)/2),serifFont, str_height)
             
 
         elif shape == self.P_ROUND:
