@@ -98,58 +98,51 @@ Ubuntu Linux
 
 .. code::
 
-    sudo apt-get install pyqt4-dev-tools
-    sudo pip install lxml
-    make all
-    ./roLabelImg.py
-    ./roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        sudo apt-get install pyqt5-dev-tools
+        sudo pip3 install -r requirements/requirements-linux-python3.txt
+        make qt5py3
+        python3 labelImg.py
+        python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 OS X
 ^^^^
 
 .. code::
 
-    brew install qt qt4
-    brew install libxml2
-    make all
-    ./roLabelImg.py
-    ./roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        brew install qt  # Install qt-5.x.x by Homebrew
+        brew install libxml2
+
+        or using pip
+
+        pip3 install pyqt5 lxml # Install qt and lxml by pip
+
+        make qt5py3
+        python3 labelImg.py
+        python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Windows
 ^^^^^^^
 
-Download and setup `Python 2.6 or
-later <https://www.python.org/downloads/windows/>`__,
-`PyQt4 <https://www.riverbankcomputing.com/software/pyqt/download>`__
-and `install lxml <http://lxml.de/installation.html>`__.
+Install Python, PyQt5 and install lxml.
 
-Open cmd and go to `roLabelImg <#roLabelimg>`__ directory
+Open cmd and go to the labelImg directory
 
 .. code::
 
-    pyrcc4 -o resources.py resources.qrc
-    python roLabelImg.py
-    python roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        pyrcc4 -o lib/resources.py resources.qrc
+        For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
+        python labelImg.py
+        python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
-Use Docker
+Windows + Anaconda
 ~~~~~~~~~~~~~~~~~
 .. code::
 
-    docker pull tzutalin/py2qt4
-
-    docker run -it \
-    --user $(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --workdir=$(pwd) \
-    --volume="/home/$USER:/home/$USER" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    tzutalin/py2qt4
-
-You can pull the image which has all of the installed and required dependencies.  
+        conda install pyqt=5
+        conda install -c anaconda lxml
+        pyrcc5 -o libs/resources.py resources.qrc
+        python labelImg.py
+        python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Usage
 -----
