@@ -232,6 +232,7 @@ class PascalVocReader:
         w = float(robndbox.find('w').text)
         h = float(robndbox.find('h').text)
         angle = float(robndbox.find('angle').text)
+        angle = angle*0.0174533
 
         p0x,p0y = self.rotatePoint(cx,cy, cx - w/2, cy - h/2, -angle)
         p1x,p1y = self.rotatePoint(cx,cy, cx + w/2, cy - h/2, -angle)
