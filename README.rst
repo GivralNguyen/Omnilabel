@@ -8,7 +8,6 @@ roLabelImg
         :target: https://travis-ci.org/tzutalin/labelImg
 
 This has been further modified from roLabelImg to display angle in range of -90 to 90 degree in accordance to labeling from CEPDOF (http://vip.bu.edu/projects/vsns/cossy/datasets/cepdof/)
-roLabelImg is a graphical image annotation tool can label ROTATED rectangle regions, which is rewrite from 'labelImg'.
 
 The original version 'labelImg''s link is here<https://github.com/tzutalin/labelImg>.
 
@@ -101,8 +100,8 @@ Ubuntu Linux
         sudo apt-get install pyqt5-dev-tools
         sudo pip3 install -r requirements/requirements-linux-python3.txt
         make qt5py3
-        python3 labelImg.py
-        python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        python3 roLabelImg.py
+        python3 roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 OS X
 ^^^^
@@ -117,8 +116,8 @@ OS X
         pip3 install pyqt5 lxml # Install qt and lxml by pip
 
         make qt5py3
-        python3 labelImg.py
-        python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        python3 roLabelImg.py
+        python3 roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Windows
 ^^^^^^^
@@ -131,8 +130,8 @@ Open cmd and go to the labelImg directory
 
         pyrcc4 -o lib/resources.py resources.qrc
         For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
-        python labelImg.py
-        python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        python roLabelImg.py
+        python roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Windows + Anaconda
 ~~~~~~~~~~~~~~~~~
@@ -141,8 +140,8 @@ Windows + Anaconda
         conda install pyqt=5
         conda install -c anaconda lxml
         pyrcc5 -o libs/resources.py resources.qrc
-        python labelImg.py
-        python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+        python roLabelImg.py
+        python roLabelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 Usage
 -----
@@ -153,9 +152,9 @@ Steps
 1. Build and launch using the instructions above.
 2. Click 'Change default saved annotation folder' in Menu/File
 3. Click 'Open Dir'
-4. Click 'Create RectBox'
+4. Click 'Create RotBndBox'
 5. Click and release left mouse to select a region to annotate the rect
-   box
+   box, Click 
 6. You can use right mouse to drag the rect box to copy or move it
 
 The annotation will be saved to the folder you specify.
